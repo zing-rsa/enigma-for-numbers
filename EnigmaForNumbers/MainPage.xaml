@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="EnigmaForNumbers.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EnigmaForNumbers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Name="Outer" 
+                Background="Black">
+        <StackPanel Name="RotorPositions" 
+                    Orientation="Vertical"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0,50,0,0"
+                    Height="150"
+                    Width="400">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Name="Rotor3" Text="{Binding Rotor3Index}" Height="40" Width="40" Grid.Column="0" Grid.Row="1" IsReadOnly="true"></TextBox>
+                <TextBox Name="Rotor2" Text="{Binding Rotor2Index}" Height="40" Width="40" Grid.Column="1" Grid.Row="1" IsReadOnly="true"></TextBox>
+                <TextBox Name="Rotor1" Text="{Binding Rotor1Index}" Height="40" Width="40" Grid.Column="2" Grid.Row="1" IsReadOnly="true"></TextBox>
+
+                <Button Command="{Binding Path = Rotor3Up   }" Height="30" Width="35" Background="WhiteSmoke" Foreground="Black" Content="^" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"></Button>
+                <Button Command="{Binding Path = Rotor3Down }" Height="30" Width="35" Background="WhiteSmoke" Foreground="Black" Content="v" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"></Button>
+                <Button Command="{Binding Path = Rotor2Up   }" Height="30" Width="35" Background="WhiteSmoke" Foreground="Black" Content="^" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"></Button>
+                <Button Command="{Binding Path = Rotor2Down }" Height="30" Width="35" Background="WhiteSmoke" Foreground="Black" Content="v" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"></Button>
+                <Button Command="{Binding Path = Rotor1Up   }" Height="30" Width="35" Background="WhiteSmoke" Foreground="Black" Content="^" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0"></Button>
+                <Button Command="{Binding Path = Rotor1Down }" Height="30" Width="35" Background="WhiteSmoke" Foreground="Black" Content="v" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2"></Button>
+
+            </Grid>
+
+        </StackPanel>
+        <StackPanel Name="Container" 
+                    Orientation="Vertical"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0,50,0,0"
+                    Height="400"
+                    Width="400">
+            <Grid Name="GridContainer" Background="White" Opacity="0.5" Height="400">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox Name="Output" Text="{Binding Path=Output,  Mode=TwoWay}"  Background="White" Width="300" Height="40" IsReadOnly="true" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" ></TextBox>
+
+                <Button Name="btn_One"   Command="{Binding Path = One}"   Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" >1</Button>
+                <Button Name="btn_Two"   Command="{Binding Path = Two}"   Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" >2</Button>
+                <Button Name="btn_Three" Command="{Binding Path = Three}" Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" >3</Button>
+                <Button Name="btn_Four"  Command="{Binding Path = Four}"  Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" >4</Button>
+                <Button Name="btn_Five"  Command="{Binding Path = Five}"  Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" >5</Button>
+                <Button Name="btn_Six"   Command="{Binding Path = Six}"   Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" >6</Button>
+                <Button Name="btn_Seven" Command="{Binding Path = Seven}" Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" >7</Button>
+                <Button Name="btn_Eight" Command="{Binding Path = Eight}" Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" >8</Button>
+                <Button Name="btn_Nine"  Command="{Binding Path = Nine}"  Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2" >9</Button>
+
+                <Button Name="btn_Clear"  Command="{Binding Path = Clear}"  Background="White" Height="50" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" >Clear</Button>
+
+            </Grid>
+        </StackPanel>
+
+    </StackPanel>
+</Page>
