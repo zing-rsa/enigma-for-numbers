@@ -114,9 +114,9 @@ namespace EnigmaForNumbers
 
         public void UpdateRotors()
         {
-            Rotor3Index = Enigma.Rotor3.CurrentIndex + 1;
-            Rotor2Index = Enigma.Rotor2.CurrentIndex + 1;
-            Rotor1Index = Enigma.Rotor1.CurrentIndex + 1;
+            Rotor3Index = Enigma.Rotor3.CurrentIndex;
+            Rotor2Index = Enigma.Rotor2.CurrentIndex;
+            Rotor1Index = Enigma.Rotor1.CurrentIndex;
         }
 
         public void RunEnigma()

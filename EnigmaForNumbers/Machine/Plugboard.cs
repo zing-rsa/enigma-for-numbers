@@ -13,18 +13,12 @@ namespace EnigmaForNumbers.Machine
 
         public HashSet<int> unplugged;
 
-
-        public Plugboard()
-        {
-
-        }
-
         public Plugboard(HashSet<PlugWire> plugconfig)
         {
             plugConfig = new HashSet<PlugWire>();
             unplugged = new HashSet<int>();
 
-            for (int i = 1; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 unplugged.Add(i);
             }
